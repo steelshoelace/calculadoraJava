@@ -1,0 +1,87 @@
+package calculadora;
+import java.util.Scanner;
+public class calculadora {
+	   static int previousResult;
+	   static Scanner scanner = new Scanner(System.in);
+   public static void main(String[] args) {
+	   int loop1 = 555;
+	   int menu = 0;
+	   while (loop1 == 555){
+	     System.out.println("Menu");
+	     System.out.println("1. Calcular");
+	     System.out.println("2. Listar resultado anterior");
+	     System.out.println("3. Sair");
+	     menu = scanner.nextInt();
+	     
+	     switch(menu) {
+	     case 1:
+	    	 calcular();
+	    	 break;
+	     case 2:
+	    	 listar();
+	    	 break;
+	     case 3:
+	         scanner.close();
+	    	 loop1 = 130;
+	    	 break;
+	     }
+	   }
+   }
+   
+   public static void listar() {
+	   System.out.println("The previosu number was:");
+	   System.out.println(previousResult);
+	   }
+   
+   
+   public static void calcular(){
+	   int loop2 = 890;
+	   int result;
+	   System.out.println("Welcome to calculator.");
+	   while(loop2 == 890) {
+	   System.out.println("Choose a number");
+	   int number1 = scanner.nextInt();
+	   System.out.println("Choose a second number");
+	   int number2 = scanner.nextInt();
+	   System.out.println("Choose the operation");
+	   char operator = scanner.next().charAt(0);
+	   switch(operator) {
+	   case '+':		   
+		   result = number1 + number2;
+		   previousResult = result;
+		   System.out.println(result);
+		   loop2 = 0;
+		   break;
+	   case '-':
+		   result = number1 - number2;
+		   previousResult = result;
+		   System.out.println(result);
+		   loop2 = 0;
+		   break;
+	   case 'x':
+		   result = number1 * number2;
+		   previousResult = result;
+		   System.out.println(result);
+		   loop2 = 0;
+		   break;
+	   case '*':
+		   result = number1 * number2;
+		   previousResult = result;
+		   System.out.println(result);
+		   loop2 = 0;
+		   break;
+	   case '/':
+		   result = number1 / number2;
+		   previousResult = result;
+		   System.out.println(result);
+		   loop2 = 0;
+		   break;
+	   default:
+			   System.out.println("Not a valid operator.");
+	       break;   
+	   }
+			   
+   }
+}
+   
+}
